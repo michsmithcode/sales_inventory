@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-m@4uwk7dnxl9448n63g(c+385-y-k^_)r0z5y*+5%b)sf$#v@)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #'prime_inventoryapp',
+    'accounts',
+    #'customers',
+    #'dashboard',
+    #'expenses',
+   # 'purchases',
+    #'reports',
+    #'sales'
 ]
 
 MIDDLEWARE = [
@@ -83,7 +91,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'sales',
-        'USERNAME': 'postgres',
+        'USER': 'postgres',
         'PASSWORD': 'ABCDe12345!',
         'PORT': '5432',
         'HOST': 'localhost'
@@ -128,3 +136,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+
+AUTH_USER_MODEL = "accounts.CustomUser"
